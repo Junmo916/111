@@ -18,6 +18,16 @@ jobs:
         run: |
           sudo apt update -qq
           sudo apt install -y -qq git zip unzip autoconf automake libtool cmake pkg-config libffi-dev libssl-dev openjdk-17-jdk-headless
+      - name: Install system dependencies
+        run: |
+          sudo apt update -qq
+          sudo apt install -y -qq \
+            git zip unzip python3-distutils \
+            autoconf automake libtool cmake \
+            pkg-config libffi-dev libssl-dev \
+            openjdk-17-jdk-headless
+          echo "JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64" >> $GITHUB_ENV
+          echo "/usr/lib/jvm/java-17-openjdk-amd64/bin" >> $GITHUB_PATH
       - name: Install buildozer
         run: pip install buildozer cython
       - name: Build APK
