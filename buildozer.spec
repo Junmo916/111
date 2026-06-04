@@ -16,7 +16,7 @@ android.api = 34
 android.minapi = 21
 android.sdk = 34
 android.ndk = 25b
-android.gradle_dependencies =
+#android.gradle_dependencies =
 
 orientation = portrait
 fullscreen = 0
